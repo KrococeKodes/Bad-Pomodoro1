@@ -1,0 +1,383 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+body {
+  background: black;
+  /*background: linear-gradient(to bottom right, #8bd8d2, #9800ff); */
+  font-family: 'Hanken Grotesk', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background 1s ease-in-out;
+  
+}
+
+
+.button-shine {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2196F3;
+  color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.button-shine:hover {
+  background-color: #1565C0;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.button-shine:focus {
+  outline: none;
+}
+
+.blue-gradient{
+  background: white;
+  /*background: linear-gradient(to bottom right, #0d47a1, #1565C0, #2196F3, #64b5f6, #90caf9);*/
+  transition: background 1s ease-in-out;
+}
+
+.sC.scShine::before {
+  opacity: 1;
+}
+
+
+.sC::before {
+  
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom right, #0d47a1, #1565C0, #2196F3, #64b5f6, #90caf9);
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+  border-radius: 10px;
+}
+
+
+.sC {
+  
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(to bottom right, #f44336, orange,yellow);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.container {
+  color: white;
+  background: #000000;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: background 1s ease-in-out;
+}
+/*
+.container.cShine {
+  background: white;
+  
+  
+  backgroundrgb(0, 0, 0)ear-gradient(to bottom right, #0d47a1, #1565C0, #2196F3, #64b5f6, #90caf9);
+  transition: background 1s ease-in-out;
+}
+*/
+.container.tShine
+{
+  color: rgb(0, 0, 0);
+  transition: color 0.7s ease-in-out;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+#toDoTitle {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.counter {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.timer {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+}
+
+button {
+  font-family: 'Hanken Grotesk', sans-serif;
+  background-color: transparent;
+  border: none;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  padding: 0.75rem 2rem;
+  transition: all 0.2s ease-in-out;
+
+}
+
+
+
+button:disabled {
+  background-color: transparent;
+  color:#c9c9c9;
+}
+
+button:not(:disabled):hover {
+  transform: scale(1.1);
+  background: transparent;
+  color: #6e6d6d;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.buttona {
+  margin-top: 0.5rem;
+}
+
+
+
+#li {
+  display: flex;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  text-align: center;
+  position: relative;
+  border-radius: 10px;
+}
+
+.settingsScreenClass {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+#new-task {
+  padding: 0.1rem 0.3rem;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: white;
+  font-family: 'Hanken Grotesk', sans-serif;
+  width: 10rem;
+}
+
+
+
+
+#new-task:focus
+{
+  padding: 0.1rem 0.3rem;
+  outline: none;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+#settingsScreen {
+  display: none;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+#settingsScreen.show {
+  display: block;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.Setting-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 1rem;
+  border: 1px solid #888;
+  width: 15%;
+  text-align: center;
+  position: relative;
+  border-radius: 10px;
+}
+
+
+#toDoHR {
+  width: 50%;
+  background-color: white;
+  position: relative;
+  text-align: center;
+  height: 3px;
+  margin: 0 auto;
+}
+
+
+
+
+#settings-btn{
+  position: relative;
+  top: 1rem;
+  right: 7rem;
+  font-weight: 100;
+  font-size: 1rem;
+  padding: 0.75rem 0.9rem;
+  order: 5;
+}
+
+.modal-close {
+  position:absolute;
+    top:0; right:0; 
+  padding: 0.1rem 0.1rem;
+  position: absolute;
+  top: 13px;
+  left: 5px;
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #f44336;
+  color: #ff0000;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-close:hover {
+  float: right;
+  width: 30px;
+  border-radius: 15px;
+  scale: 0.9;
+  background-color: #f44336;
+  color: #000;
+  transform: scale(1.2);
+
+}
+
+
+.toList {
+  font-size: 1rem;
+  margin-top: 1rem;
+  position: relative;
+  text-align: center;
+  order: 2;
+}
+
+#addTo {
+  top: 1rem;
+  right: 7rem;
+  font-weight: 100;
+  font-size: 1rem;
+  padding: 0.75rem 0.9rem;
+}
+
+.delete {
+  top: 1rem;
+  left: 10rem;
+  font-weight: 100;
+  font-size: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  background: #f44336;
+  color: #000;
+  
+}
+
+.listItems {
+  top: 1rem;
+  font-weight: 200;
+  font-size: 1rem;
+  padding: 0.5rem 0.7rem;
+  color: #000;
+}
+
+
+#deleteBtn:hover {
+  transform: scale(1.1); 
+  transition: all 0.2s ease-in-out;
+  background: #f44336;
+}
+#deleteBtn {
+  transform: scale(1); 
+  transition: all 0.2s ease-in-out;
+  background: #f44336;
+  font-weight: 400rem;
+}
+
+.checkBtnClass {
+  top: 1rem;
+  left: 9rem;
+  font-weight: 100;
+  font-size: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  background: #36f449;
+  color: #000;
+  
+}
+#checkBtn:hover {
+  transform: scale(1.1); 
+  transition: all 0.2s ease-in-out;
+  background: #36f449;
+}
+#checkBtn {
+  transform: scale(1); 
+  transition: all 0.2s ease-in-out;
+  background: #36f449;
+  margin-left: 6rem;
+}
